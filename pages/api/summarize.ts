@@ -26,7 +26,7 @@ export default async function handler(req: Request) {
     const data = await response.text();
 
     const root = parse(data);
-    const body = root.querySelector(".article-content");
+    const body = root.getElementById("texto_noticia");
     const text = body!.innerText
       .replace(/(\r\n|\n|\r)/gm, "")
       .replace(/(\r\t|\t|\r)/gm, "");
